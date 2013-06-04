@@ -1,0 +1,16 @@
+<%= form_for(@cookbook) do |f| %>
+  <span class="formLabelText"> 
+    <%= f.label :title %>
+  </span>
+    <%= f.text_field :title %></br>
+  <span class="formLabelText"> 
+    <%= f.label :cuisine %>
+  </span>
+    <%= f.text_field :cuisine %></br>
+  <span class="formLabelText"> 
+    <%= f.label :description %>
+  </span>
+    <%= f.text_field :description %></br>
+  
+  <%= f.submit %>
+<% end %>

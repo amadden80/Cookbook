@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cookbook_app_development
+  pool: 5
+  username: amadden80
+  host: localhost
+  password:
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: cookbook_app_test
+#   pool: 5
+#   username: amadden80
+#   host: localhost
+#   password:
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: cookbook_app_production
+#   pool: 5
+#   username: amadden80
+#   host: localhost
+#   password:

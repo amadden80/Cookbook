@@ -1,0 +1,35 @@
+<ul>
+<% @cookbooks.each do |cookbook|%>
+
+<li>
+  <p>
+    <span class="displayLabelText"> 
+      Title:
+    </span>
+    <%= cookbook.title %>
+  </p>
+
+  <p>
+    <span class="displayLabelText"> 
+      Cuisine:
+    </span>
+    <%= cookbook.cuisine %>
+  </p>
+
+  <p>
+    <span class="displayLabelText"> 
+      Description:
+    </span>
+    <%= cookbook.description %>
+  </p>
+
+  <p>
+    <%= link_to 'Edit', edit_cookbook_path(cookbook), method: :get %>
+    <%= link_to 'Delete', cookbook_path(cookbook), method: :delete %>
+  </p>
+  
+  
+</li>
+</br>
+<% end %>
+</ul>
