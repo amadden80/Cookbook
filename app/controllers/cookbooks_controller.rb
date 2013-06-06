@@ -13,6 +13,16 @@ class CookbooksController < ApplicationController
 
   def new
     @cookbook=Cookbook.new
+
+    recipesAll = Recipe.all
+    @recipes = []
+    recipesAll.each do |recipe| 
+      if (recipe.cookbook_id == params['id'].to_i)
+        @recipes << {name: recipe.name, id: recipe.id, inBook: "checked" }
+      else
+        @recipes << {name: recipe.name, id: recipe.id, inBook: "" }
+      end
+    end
   end
 
   def create
@@ -33,13 +43,11 @@ class CookbooksController < ApplicationController
     recipesAll = Recipe.all
     @recipes = []
     recipesAll.each do |recipe| 
-      
       if (recipe.cookbook_id == params['id'].to_i)
         @recipes << {name: recipe.name, id: recipe.id, inBook: "checked" }
       else
         @recipes << {name: recipe.name, id: recipe.id, inBook: "" }
       end
-      
     end
 
   end
@@ -69,11 +77,9 @@ class CookbooksController < ApplicationController
     end
   end
 
-
   def destroy
     Cookbook.find(params['id']).destroy
     redirect_to cookbooks_path
   end
-
 
 end

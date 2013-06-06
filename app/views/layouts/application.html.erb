@@ -6,14 +6,18 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+
+  <div id = "masterCookbookContainer">
 
   <%= render partial: 'layouts/partials/nav' %>
 
-<div class = "row">
-  <div class = "span7">
-    <%= yield %>
-  </dvi>
+  <div class = "row">
+    <div class = "span7">
+      <%= yield %>
+    </dvi>
+  </div>
+
 </div>
 
 </body>

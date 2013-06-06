@@ -13,13 +13,14 @@
     <%= f.text_area :description, :cols => 20, :rows => 2%></br>
 
 
-
+<% if @recipes.present? %>
   <% @recipes.each do |recipe| %>
     <input type="checkbox" name="<%= recipe[:name] %>" <%= recipe[:inBook]%> >
       <%= recipe[:name] %>
     </input>
   </br>
   <% end %>
+<% end %>
 
   <br/>
 
