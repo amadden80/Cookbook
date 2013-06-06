@@ -10,7 +10,19 @@
   <span class="formLabelText"> 
     <%= f.label :description %>
   </span>
-    <%= f.text_field :description %></br>
-  
-  <%= f.submit %>
+    <%= f.text_area :description, :cols => 20, :rows => 2%></br>
+
+
+
+  <% @recipes.each do |recipe| %>
+    <input type="checkbox" name="<%= recipe[:name] %>" <%= recipe[:inBook]%> >
+      <%= recipe[:name] %>
+    </input>
+  </br>
+  <% end %>
+
+  <br/>
+
+  <%= f.submit :class => "btn" %>
+
 <% end %>

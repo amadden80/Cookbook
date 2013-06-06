@@ -1,0 +1,20 @@
+
+<%= form_for(@recipe) do |f| %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name %></br>
+  <%= f.label :instructions %>
+  <%= f.text_area :instructions, :cols => 20, :rows => 2%></br>
+  <%= f.label :serving_size %>
+  <%= f.number_field :serving_size, options = {min: 0}%></br>
+  <%= f.label :img_url %>
+  <%= f.url_field :img_url %></br>
+  <%= f.label :course %>
+  <%= f.text_field :course %></br>
+  <%= f.label :cook_time %>
+  <%= f.number_field :cook_time, options = {min: 0} %></br>
+  <%= f.label :cookbook_id %>
+  <%= f.select :cookbook_id, Cookbook.all.map{ |cookbook| [cookbook.title, cookbook.id]} %></br>
+  <%= f.submit :class => "btn"%>
+
+<% end %>

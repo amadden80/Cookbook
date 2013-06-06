@@ -13,6 +13,7 @@
     <span class="displayLabelText"> 
       Cuisine:
     </span>
+    Type: 
     <%= cookbook.cuisine %>
   </p>
 
@@ -24,11 +25,10 @@
   </p>
 
   <p>
-    <%= link_to 'Edit', edit_cookbook_path(cookbook), method: :get %>
-    <%= link_to 'Delete', cookbook_path(cookbook), method: :delete %>
+    <%= link_to 'Edit', edit_cookbook_path(cookbook), method: :get, class: "btn" %>
+    <%= link_to 'Delete', cookbook_path(cookbook), method: :delete, class: "btn" %>
   </p>
-  
-  
+
 </li>
 </br>
 <% end %>

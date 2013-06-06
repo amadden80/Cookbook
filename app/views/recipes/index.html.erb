@@ -1,0 +1,54 @@
+<% @recipes.each do |recipe| %>
+
+<div class="recipeItems_recipes">
+  <p>    
+    <h1>
+      <%= link_to recipe.name, recipe_path(recipe), method: :get %>
+    </h1>
+  </p>
+  <p>
+    <img src='<%= recipe.img_url %>' class="foodImage"/>
+  </p>
+
+  <p>
+    <span class="displayLabelText_recipes"> 
+      Course: 
+    </span>
+    <%= recipe.course %>
+  </p>
+
+  <p>
+    <span class="displayLabelText_recipes"> 
+      Time: 
+    </span>
+    <%= recipe.cook_time %>
+  <span class="displayLabelText_recipes"> 
+     - Srv Size: 
+    </span>
+    <%= recipe.serving_size %>
+  </p>
+  
+  <div class="recipeDesription_recipes">
+    <p>
+      <%= recipe.instructions %>
+    </p>
+  </div>
+
+
+  <p>
+    <div class='btn-group'>
+      <%= link_to 'Edit', edit_recipe_path(recipe), method: :get, :class => "btn" %>
+      <%= link_to 'Delete', recipe_path(recipe), method: :delete, :class => "btn" %>
+    </div>
+  </p>
+  
+</div>
+
+<div>
+  <p>
+    *****************************************
+  </p>
+</div>
+
+
+<% end %>
